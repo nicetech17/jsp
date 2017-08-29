@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+function test(btnObj){
+	/*var idObj = document.getElementById("id");
+	alert(idObj.value);
+	var pwdObj = document.getElementById("pwd");
+	alert(pwdObj.value);
+	var ageObj = document.getElementById("age");
+	alert(ageObj.value);
+	var nameObj = document.getElementById("name");
+	alert(nameObj.value);*/
+	alert(btnObj.value)
+}
+
+var TestObj = function() {
+	this.a = 3;
+	this.b = 4;
+	var c = 10;	// 20~26 영향 function 함수 내
+	this.alertStr = function(str){ // 변수에 함수가 들어감
+		alert(/*str*/c);
+	}
+}
+
+var to = new TestObj();
+to.alertStr(/*"출력될까"*/);
+</script>
+<body>
+<input type = "text" name="id"id="id"value="테스트"><br>
+<input type = "text" name="pwd"id="pwd"><br>
+<input type = "text" name="age"id="age"><br>
+<input type = "text" name="name"id="name"><br>
+<input type = "button" value="테스트1"onclick="test(this)"><br>
+</body>
+</html>
